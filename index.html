@@ -1,63 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-	 <?php
-  include ('connect.php');
-  error_reporting(0);
-  session_start();
-  $emp_no=($_SESSION['emp_no']);
-  $nat=($_SESSION['nat']);
-  ?>
-	<style>
-.button {
-  
-    font-size: 25px;
-  padding: 15px 32px;
-  color: black;
-}
+	<style type="text/css">
+		div{
+			top: 20px;
+			
+			background: #FAEBD7;
+			width: 33%;
+			left: 33%;
+		}
+		input{
+			font-size: 28px;
+			
+			width: 66%;
+		}
+		label{
+			font-size: 25px;
+			
+			width: 100%;
+		}
 </style>
+	<?php
+session_start();
+session_unset();
+session_destroy();
+	?>
 <center>
 	<title> parrows</title>
 	<link rel="stylesheet" type="text/css" href="css\index.css">
 </head>
 <body>
+	<div>
 <h1 >ِشركة السهام البترولية ترحب بكم</h1>
 <br>
 <img src="img/1.jpg">
 <br>
-<br>
- <?php
-echo($_SESSION['emp_no']);
-
-$sql="SELECT name  FROM employees WHERE emp_no='$emp_no' ";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-    echo"اهلا :" . $row["name"]   ;
-   
-  }
-} else {
-  echo "0 results";
-}
-?> 
-<br>
-<br>
-<button class="button">
-	<a  id="id2" href="logontxt.php" target="_blank">البيانات الشخصية</a>
-</button>
-
-<button class="button">
-	<a  id="id2" href="logonmon.php" target="_blank">بيانات الحضور والانصراف</a>
-</button>
-
-<br>
 
 <br>
 <br>
 <br>
 
+	
+<form  action="fun/logontext.php" method="GET">
+	<link rel="stylesheet" type="text/css" href="css\index.css">
+	<label>رقم الاداء بالشركة</label>
+	<br>
+	<input type="" name="n1" placeholder="رقم الاداء بالشركة" required="required">
+	<br>
+
+	<label>الرقم القومى<label>
+	<br>
+	<input type="password" name="n2" placeholder="الرقم القومى" required="required">
+	
+	<input style="width: 50%" color:blue type="submit" name="دخول">
+	<center>
+<a href="adduser.php?q1=0">ليس لدى حساب</a>
+
+	<center>
+</form>
+<br>
 <br>
 </center>
+
+</div>
 </body>
 </html>
