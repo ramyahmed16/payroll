@@ -1,0 +1,31 @@
+body{
+	background: #8FBC8F;
+}
+.haa{
+	width: 350px;
+	color: #000080;
+	font-style: italic;
+	font-size: 25px;
+	text-align:center;
+	text-shadow: 2px 3px #9932CC;
+}
+#id1{
+	text-decoration: none;
+}
+img{
+	width: 300px;
+	height: 300px;
+	opacity: .55;
+}
+img:hover {
+	opacity: 1;
+	width: 350px;
+}
+a , button {
+	text-decoration: none;
+	width: 120px;
+	color:#000;
+	font-style: italic;
+	text-align:center;
+	
+}
